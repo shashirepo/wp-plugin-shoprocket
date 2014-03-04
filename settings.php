@@ -38,8 +38,9 @@ if(!class_exists('wp_plugin_Shoprocket_Settings'))
                 'wp_plugin_Shoprocket', 
                 'wp_plugin_Shoprocket-section',
                 array(
-                    'field' => 'username'
-                )
+                    'field' => 'username',
+                    'type'  => 'text'
+                 )
             );
             add_settings_field(
                 'wp_plugin_Shoprocket-password', 
@@ -48,7 +49,8 @@ if(!class_exists('wp_plugin_Shoprocket_Settings'))
                 'wp_plugin_Shoprocket', 
                 'wp_plugin_Shoprocket-section',
                 array(
-                    'field' => 'Password'
+                    'field' => 'Password',
+                    'type'  => 'password'
                 )
             );
             // Possibly do additional admin_init tasks
@@ -57,7 +59,7 @@ if(!class_exists('wp_plugin_Shoprocket_Settings'))
         public function settings_section_wp_plugin_Shoprocket()
         {
             // Think of this as help text for the section.
-            echo 'Please provide your username & password for ShopRocket activation';
+            echo 'Please provide your username & password for ShopRocket activation.';
         }
         
         /**
@@ -67,10 +69,12 @@ if(!class_exists('wp_plugin_Shoprocket_Settings'))
         {
             // Get the field name from the $args array
             $field = $args['field'];
+			// Get the field type
+			$type = $args['type'];
             // Get the value of this setting
             $value = get_option($field);
             // echo a proper input type="text"
-            echo sprintf('<input type="text" name="%s" id="%s" value="%s" />', $field, $field, $value);
+            echo sprintf('<input type="%s" name="%s" id="%s" value="%s" />', $type, $field, $field, $value);
         } // END public function settings_field_input_text($args)
         
         /**
