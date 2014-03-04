@@ -1,7 +1,7 @@
 <?php
-if(!class_exists('wp_plugin_shoprocket_Settings'))
+if(!class_exists('wp_plugin_Shoprocket_Settings'))
 {
-	class wp_plugin_shoprocket_Settings
+	class wp_plugin_Shoprocket_Settings
 	{
 		/**
 		 * Construct the plugin object
@@ -19,45 +19,45 @@ if(!class_exists('wp_plugin_shoprocket_Settings'))
         public function admin_init()
         {
         	// register your plugin's settings
-        	register_setting('wp_plugin_shoprocket-group', 'setting_a');
-        	register_setting('wp_plugin_shoprocket-group', 'setting_b');
+        	register_setting('wp_plugin_Shoprocket-group', 'username');
+        	register_setting('wp_plugin_Shoprocket-group', 'password');
 
         	// add your settings section
         	add_settings_section(
-        	    'wp_plugin_shoprocket-section', 
-        	    'WP Plugin Template Settings', 
-        	    array(&$this, 'settings_section_wp_plugin_shoprocket'), 
-        	    'wp_plugin_shoprocket'
+        	    'wp_plugin_Shoprocket-section', 
+        	    'ShopRocket login credentials', 
+        	    array(&$this, 'settings_section_wp_plugin_Shoprocket'), 
+        	    'wp_plugin_Shoprocket'
         	);
         	
         	// add your setting's fields
             add_settings_field(
-                'wp_plugin_shoprocket-setting_a', 
-                'Setting A', 
+                'wp_plugin_Shoprocket-username', 
+                'Username', 
                 array(&$this, 'settings_field_input_text'), 
-                'wp_plugin_shoprocket', 
-                'wp_plugin_shoprocket-section',
+                'wp_plugin_Shoprocket', 
+                'wp_plugin_Shoprocket-section',
                 array(
-                    'field' => 'setting_a'
+                    'field' => 'username'
                 )
             );
             add_settings_field(
-                'wp_plugin_shoprocket-setting_b', 
-                'Setting B', 
+                'wp_plugin_Shoprocket-password', 
+                'Password', 
                 array(&$this, 'settings_field_input_text'), 
-                'wp_plugin_shoprocket', 
-                'wp_plugin_shoprocket-section',
+                'wp_plugin_Shoprocket', 
+                'wp_plugin_Shoprocket-section',
                 array(
-                    'field' => 'setting_b'
+                    'field' => 'Password'
                 )
             );
             // Possibly do additional admin_init tasks
         } // END public static function activate
         
-        public function settings_section_wp_plugin_shoprocket()
+        public function settings_section_wp_plugin_Shoprocket()
         {
             // Think of this as help text for the section.
-            echo 'These settings do things for the WP Plugin Template.';
+            echo 'Please provide your username & password for ShopRocket activation';
         }
         
         /**
@@ -81,9 +81,9 @@ if(!class_exists('wp_plugin_shoprocket_Settings'))
             // Add a page to manage this plugin's settings
         	add_options_page(
         	    'WP Plugin Template Settings', 
-        	    'ShopRocket Settings', 
+        	    'Shoprocket Settings', 
         	    'manage_options', 
-        	    'wp_plugin_shoprocket', 
+        	    'wp_plugin_Shoprocket', 
         	    array(&$this, 'plugin_settings_page')
         	);
         } // END public function add_menu()
@@ -101,5 +101,5 @@ if(!class_exists('wp_plugin_shoprocket_Settings'))
         	// Render the settings template
         	include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
         } // END public function plugin_settings_page()
-    } // END class wp_plugin_shoprocket_Settings
-} // END if(!class_exists('wp_plugin_shoprocket_Settings'))
+    } // END class wp_plugin_Shoprocket_Settings
+} // END if(!class_exists('wp_plugin_Shoprocket_Settings'))

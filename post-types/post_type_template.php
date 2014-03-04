@@ -96,7 +96,7 @@ if(!class_exists('Post_Type_Template'))
     	{
     		// Add this metabox to every selected post
     		add_meta_box( 
-    			sprintf('wp_plugin_shoprocket_%s_section', self::POST_TYPE),
+    			sprintf('wp_plugin_Shoprocket_%s_section', self::POST_TYPE),
     			sprintf('%s Information', ucwords(str_replace("_", " ", self::POST_TYPE))),
     			array(&$this, 'add_inner_meta_boxes'),
     			self::POST_TYPE

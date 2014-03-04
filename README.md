@@ -1,3 +1,3 @@
-wp_plugin_shoprocket
+wp_plugin_Shoprocket
 
-A wordpress plugin that integrates shoprocket with wordpress.
+A wordpress plugin that integrates Shoprocket with wordpress.

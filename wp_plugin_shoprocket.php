@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: ShopRocket
+Plugin Name: Shoprocket
 Plugin URI: https://github.com/ClickHereMedia/Shoprocket
 Description: Here goes description
 Version: 1.0
@@ -25,9 +25,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if(!class_exists('WP_Plugin_shoprocket'))
+if(!class_exists('WP_Plugin_Shoprocket'))
 {
-	class WP_Plugin_shoprocket
+	class WP_Plugin_Shoprocket
 	{
 		/**
 		 * Construct the plugin object
@@ -36,7 +36,7 @@ if(!class_exists('WP_Plugin_shoprocket'))
 		{
 			// Initialize Settings
 			require_once(sprintf("%s/settings.php", dirname(__FILE__)));
-			$wp_plugin_shoprocket_Settings = new wp_plugin_shoprocket_Settings();
+			$wp_plugin_Shoprocket_Settings = new wp_plugin_Shoprocket_Settings();
 
 			// Register custom post types
 			require_once(sprintf("%s/post-types/post_type_template.php", dirname(__FILE__)));
@@ -65,22 +65,22 @@ if(!class_exists('WP_Plugin_shoprocket'))
 		// Add the settings link to the plugins page
 		function plugin_settings_link($links)
 		{
-			$settings_link = '<a href="options-general.php?page=wp_plugin_shoprocket">Settings</a>';
+			$settings_link = '<a href="options-general.php?page=wp_plugin_Shoprocket">Settings</a>';
 			array_unshift($links, $settings_link);
 			return $links;
 		}
 
 
-	} // END class wp_plugin_shoprocket
-} // END if(!class_exists('wp_plugin_shoprocket'))
+	} // END class wp_plugin_Shoprocket
+} // END if(!class_exists('wp_plugin_Shoprocket'))
 
-if(class_exists('WP_Plugin_shoprocket'))
+if(class_exists('WP_Plugin_Shoprocket'))
 {
 	// Installation and uninstallation hooks
-	register_activation_hook(__FILE__, array('WP_Plugin_shoprocket', 'activate'));
-	register_deactivation_hook(__FILE__, array('WP_Plugin_shoprocket', 'deactivate'));
+	register_activation_hook(__FILE__, array('WP_Plugin_Shoprocket', 'activate'));
+	register_deactivation_hook(__FILE__, array('WP_Plugin_Shoprocket', 'deactivate'));
 
 	// instantiate the plugin class
-	$wp_plugin_shoprocket = new WP_Plugin_shoprocket();
+	$wp_plugin_Shoprocket = new WP_Plugin_Shoprocket();
 
 }
