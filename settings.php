@@ -83,7 +83,7 @@ if(!class_exists('wp_plugin_Shoprocket_Settings'))
         public function add_menu()
         {
             // Add a page to manage this plugin's settings
-        	add_options_page(
+        	add_menu_page(
         	    'WP Plugin Template Settings', 
         	    'Shoprocket Settings', 
         	    'manage_options', 
